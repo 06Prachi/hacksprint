@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Classroom - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .header h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #666;
+            font-size: 1.2em;
+        }
+        .roles-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .role-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+        .role-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        .role-card img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        .role-card h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .role-card p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .role-card button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .role-card button:hover {
+            background: #0056b3;
+        }
+        
+        /* New Navigation Styles */
+        .nav-header {
+            width: 100%;
+            background: #1b1b1b;
+            padding: 15px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        .nav-logo {
+            color: white;
+            font-size: 1.5em;
+            text-decoration: none;
+        }
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-menu a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .nav-menu a:hover {
+            color: #007bff;
+        }
+        body {
+            padding-top: 80px;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background: #1b1b1b;
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+            width: 100%;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 0 20px;
+        }
+        .footer-section h3 {
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+        .footer-section p, .footer-section a {
+            color: #999;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <!-- New Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Classroom</a>
+            <div class="nav-menu">
+                <a href="#">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#programs">Programs</a>
+                
+                <a href="#contact">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="header">
+        <h1>Welcome to Classroom</h1>
+        <p>Choose your role to get started</p>
+    </div>
+
+    <div class="roles-container">
+        <div class="role-card" onclick="window.location.href='student_dashboard.html'">
+            <img src="student-icon.png" alt="Student Icon">
+            <h2>Student</h2>
+            <p>Access your courses, assignments, and track your progress</p>
+            <button>Enter as Student</button>
+        </div>
+
+        <div class="role-card" onclick="window.location.href='teacher_dashboard.html'">
+            <img src="teacher-icon.png" alt="Teacher Icon">
+            <h2>Teacher</h2>
+            <p>Manage courses, create assignments, and monitor student progress</p>
+            <button>Enter as Teacher</button>
+        </div>
+
+        <div class="role-card" onclick="window.location.href='index.html'">
+            <img src="admin-icon.png" alt="Admin Icon">
+            <h2>Admin</h2>
+            <p>Manage users, oversee system operations, and maintain platform</p>
+            <button>Enter as Admin</button>
+        </div>
+    </div>
+
+    <!-- New Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>About Us</h3>
+                <p>We are dedicated to providing quality education through our innovative learning platform.</p>
+            </div>
+             
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>Email: info@classroom.com</p>
+                <p>Phone: +1 234 567 890</p>
+                <p>Address: Mumbai, Maharashtra</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Classroom. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

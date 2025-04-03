@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance - AI Classroom</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #007BFF;
+            color: white;
+        }
+        .chart-container {
+            margin-top: 30px;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #ff4d4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>📊 Student Performance</h2>
+        
+        <!-- Student Performance Table -->
+        <table>
+            <tr>
+                <th>Student Name</th>
+                <th>Quiz</th>
+                <th>Attendance</th>
+                <th>Overall Performance</th>
+            </tr>
+            <tr>
+                <td>John Doe</td>
+                <td>85%</td>
+                <td>92%</td>
+                <td>Good</td>
+            </tr>
+            <tr>
+                <td>Jane Smith</td>
+                <td>90%</td>
+                <td>95%</td>
+                <td>Excellent</td>
+            </tr>
+            <tr>
+                <td>Alex Johnson</td>
+                <td>78%</td>
+                <td>88%</td>
+                <td>Average</td>
+            </tr>
+        </table>
+
+        <!-- Performance Chart -->
+        <div class="chart-container">
+            <canvas id="performanceChart"></canvas>
+        </div>
+
+        <a href="teacher_dashboard.html" class="back-button">🔙 Back to Dashboard</a>
+    </div>
+
+    <script>
+        // Student performance chart data
+        const ctx = document.getElementById('performanceChart').getContext('2d');
+        const performanceChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['John Doe', 'Jane Smith', 'Alex Johnson'],
+                datasets: [
+                    {
+                        label: 'Quiz (%)',
+                        data: [85, 90, 78],
+                        backgroundColor: 'rgba(54, 162, 235, 0.7)'
+                    },
+                    {
+                        label: 'Attendance (%)',
+                        data: [92, 95, 88],
+                        backgroundColor: 'rgba(255, 206, 86, 0.7)'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>

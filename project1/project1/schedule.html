@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academic Schedule</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            padding: 15px;
+            color: #fff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header a {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .schedule-section {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .schedule-section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .event-card {
+            background: #f8f9fa;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+        .event-card.test {
+            border-left-color: #dc3545;
+        }
+        .event-card.exam {
+            border-left-color: #28a745;
+        }
+        .event-card.activity {
+            border-left-color: #ffc107;
+        }
+        .event-date {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        .event-title {
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .event-details {
+            color: #666;
+        }
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .tab {
+            padding: 10px 20px;
+            background: #ddd;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .tab.active {
+            background: #007bff;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Academic Schedule</h1>
+            <a href="student_dashboard.html">Back to Dashboard</a>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active">All Events</button>
+            <button class="tab">Class Tests</button>
+            <button class="tab">Exams</button>
+            <button class="tab">Activities</button>
+        </div>
+
+        <div class="schedule-section">
+            <h2>November 2023</h2>
+            
+            <div class="event-card test">
+                <div class="event-date">November 20, 2023</div>
+                <div class="event-title">SPCC Class Test</div>
+                <div class="event-details">Topics: Compiler Design Basics</div>
+            </div>
+
+            <div class="event-card exam">
+                <div class="event-date">November 20 - December 5, 2023</div>
+                <h3>Internal Assessment Test 2</h3>
+                <p>Second Internal Assessment for all subjects</p>
+            </div>
+
+            <div class="event-card cultural">
+                <div class="event-date">December 15-16, 2023</div>
+                <h3>Annual Cultural Festival</h3>
+                <p>College Cultural Events and Competitions</p>
+            </div>
+
+            <div class="event-card exam">
+                <div class="event-date">December 20, 2023</div>
+                <h3>Term Work Submission</h3>
+                <p>Final submission of all laboratory work and assignments</p>
+            </div>
+
+            <div class="event-card technical">
+                <div class="event-date">January 5, 2024</div>
+                <h3>Project Progress Review</h3>
+                <p>Final Year Project Review Presentation</p>
+            </div>
+
+            <div class="event-card exam">
+                <div class="event-date">January 15 - February 5, 2024</div>
+                <h3>End Semester Examination</h3>
+                <p>Final Theory Examinations for Semester VII</p>
+            </div>
+        </div>
+
+        <div class="event-section">
+            <h2>Important Academic Dates</h2>
+            
+            <div class="event-card">
+                <div class="event-date">October 1, 2023</div>
+                <h3>Semester Commencement</h3>
+                <p>Start of Academic Session 2023-24</p>
+            </div>
+
+            <div class="event-card">
+                <div class="event-date">February 15, 2024</div>
+                <h3>Semester End</h3>
+                <p>Completion of Academic Session 2023-24</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

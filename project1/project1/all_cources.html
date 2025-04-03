@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            background-color: #f4f4f4;
+        }
+        .main-content {
+            width: 100%;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #222;
+            padding: 15px;
+            color: #fff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .header a {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .semester-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .semester-heading {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+        .course-code {
+            color: #666;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+        .course-details {
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #eee;
+        }
+        .course-details p {
+            margin: 5px 0;
+            color: #444;
+        }
+        .enroll-btn {
+            background: #007BFF;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            transition: background 0.3s;
+        }
+        .enroll-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="header">
+            <h2>Available Courses</h2>
+            <a href="student_login.html">Back to Login</a>
+        </div>
+
+        <div class="semester-section">
+            <h2 class="semester-heading">Core Subjects</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-code">CS601</div>
+                    <h3>System Programming and Compiler Construction</h3>
+                    <div class="course-details">
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-code">CS602</div>
+                    <h3>Cryptography and System Security</h3>
+                    <div class="course-details">
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-code">CS603</div>
+                    <h3>Mobile Computing</h3>
+                    <div class="course-details">
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-code">CS604</div>
+                    <h3>Artificial Intelligence</h3>
+                    <div class="course-details">
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="semester-section">
+            <h2 class="semester-heading">Laboratory Courses</h2>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-code">CSL601</div>
+                    <h3>SPCC Lab</h3>
+                    <div class="course-details">
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-code">CSL602</div>
+                    <h3>CSS Lab</h3>
+                    <div class="course-details">
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-code">CSL603</div>
+                    <h3>MC Lab</h3>
+                    <div class="course-details">
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+
+                <div class="course-card">
+                    <div class="course-code">CSL604</div>
+                    <h3>AI Lab</h3>
+                    <div class="course-details">
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-code">CSL605</div>
+                    <h3>CC Lab</h3>
+                    <div class="course-details">
+                        <button class="enroll-btn">Enroll Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+    <script>
+        document.querySelectorAll('.enroll-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const courseName = this.parentElement.parentElement.querySelector('h3').textContent;
+                alert(`Successfully enrolled in ${courseName}`);
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance - Teacher Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            margin-right: 10px;
+        }
+        .form-group select, .form-group input {
+            padding: 8px;
+            margin-right: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        .btn {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        .present {
+            background-color: #28a745;
+            color: white;
+        }
+        .absent {
+            background-color: #dc3545;
+            color: white;
+        }
+        .save-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            float: right;
+            margin-top: 20px;
+        }
+        .back-btn {
+            background-color: #6c757d;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2>Mark Attendance</h2>
+            <a href="teacher_dashboard.html" class="back-btn">Back to Dashboard</a>
+        </div>
+
+        <div class="form-group">
+            <label>Date:</label>
+            <input type="date" id="date">
+            <label>Subject:</label>
+            <select id="subject">
+                <option>Select Subject</option>
+                <option>System Programming</option>
+                <option>Cryptography</option>
+                <option>Mobile Computing</option>
+            </select>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll No</th>
+                    <th>Student Name</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td id="status-1">Present</td>
+                    <td>
+                        <button class="btn present" onclick="markAttendance(1, 'present')">Present</button>
+                        <button class="btn absent" onclick="markAttendance(1, 'absent')">Absent</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td id="status-2">Present</td>
+                    <td>
+                        <button class="btn present" onclick="markAttendance(2, 'present')">Present</button>
+                        <button class="btn absent" onclick="markAttendance(2, 'absent')">Absent</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn save-btn" onclick="saveAttendance()">Save Attendance</button>
+    </div>
+
+    <script>
+        // Set today's date as default
+        document.getElementById('date').valueAsDate = new Date();
+
+        function markAttendance(id, status) {
+            document.getElementById(`status-${id}`).textContent = status.charAt(0).toUpperCase() + status.slice(1);
+        }
+
+        function saveAttendance() {
+            const date = document.getElementById('date').value;
+            const subject = document.getElementById('subject').value;
+            alert(`Attendance saved for ${subject} on ${date}`);
+            // Here you would typically send the data to a server
+        }
+    </script>
+</body>
+</html>

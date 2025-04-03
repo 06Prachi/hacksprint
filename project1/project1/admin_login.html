@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Classroom - Login & Signup</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 350px;
+            padding: 20px;
+            background: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .toggle {
+            margin-top: 10px;
+            color: #007BFF;
+            cursor: pointer;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2>Login</h2>
+            <input type="text" placeholder="Username" id="loginUser">
+            <input type="password" placeholder="Password" id="loginPass">
+            <button onclick="login()">Login</button>
+            <span class="toggle" onclick="toggleForm()">Don't have an account? Sign up</span>
+        </div>
+
+        <!-- Signup Form -->
+        <div id="signupForm" style="display: none;">
+            <h2>Sign Up</h2>
+            <input type="text" placeholder="Full Name" id="signupName">
+            <input type="email" placeholder="Email" id="signupEmail">
+            <input type="text" placeholder="Username" id="signupUser">
+            <input type="password" placeholder="Password" id="signupPass">
+            <button onclick="signup()">Sign Up</button>
+            <span class="toggle" onclick="toggleForm()">Already have an account? Login</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            let loginForm = document.getElementById("loginForm");
+            let signupForm = document.getElementById("signupForm");
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                signupForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                signupForm.style.display = "block";
+            }
+        }
+
+        function login() {
+            let username = document.getElementById("loginUser").value;
+            let password = document.getElementById("loginPass").value;
+
+            if (username === "" || password === "") {
+                alert("Please enter both username and password!");
+                return;
+            }
+
+            // Simulated login check
+            alert("Logged in as " + username);
+        }
+
+        function signup() {
+            let name = document.getElementById("signupName").value;
+            let email = document.getElementById("signupEmail").value;
+            let username = document.getElementById("signupUser").value;
+            let password = document.getElementById("signupPass").value;
+
+            if (name === "" || email === "" || username === "" || password === "") {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            // Simulated signup
+            alert("Account created for " + username);
+        }
+    </script>
+
+</body>
+</html>
